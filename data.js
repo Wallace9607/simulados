@@ -1,695 +1,276 @@
 const questions = [
-
-{
-    id: 1,
-    difficulty: "hard",
-
-    q: "Qual é a principal característica que distingue um circuito lógico sequencial de um circuito combinacional?",
-
-    options: [
-
-        {
-            text: "A presença de dispositivos de memória para armazenar estados anteriores.",
-            correct: true,
-            rationale: "Circuitos sequenciais possuem memória e dependem de estados anteriores."
-        },
-
-        {
-            text: "O uso exclusivo de portas NAND e NOR.",
-            correct: false,
-            rationale: "Ambos os tipos podem utilizar essas portas."
-        },
-
-        {
-            text: "A capacidade de realizar operações aritméticas.",
-            correct: false,
-            rationale: "Circuitos combinacionais também realizam operações aritméticas."
-        },
-
-        {
-            text: "A ausência total de sinais de clock.",
-            correct: false,
-            rationale: "Circuitos síncronos utilizam clock."
-        }
-
-    ]
-},
-
-{
-    id: 2,
-    difficulty: "medium",
-
-    q: "Considere uma porta AND com A = 1 e B = 0. Qual é a saída?",
-
-    options: [
-
-        {
-            text: "0",
-            correct: true,
-            rationale: "A porta AND só retorna 1 quando ambas as entradas são 1."
-        },
-
-        {
-            text: "1",
-            correct: false,
-            rationale: "A saída seria 1 apenas se A=1 e B=1."
-        },
-
-        {
-            text: "Indeterminado",
-            correct: false,
-            rationale: "O resultado é definido pela tabela verdade."
-        },
-
-        {
-            text: "Z (Alta impedância)",
-            correct: false,
-            rationale: "Alta impedância não faz parte da tabela verdade básica."
-        }
-
-    ]
-},
-
-{
-    id: 3,
-    difficulty: "hard",
-
-    q: "Segundo o Teorema de De Morgan, NOT(A + B) equivale a:",
-
-    options: [
-
-        {
-            text: "NOT A AND NOT B",
-            correct: true,
-            rationale: "A negação da soma equivale ao produto das negações."
-        },
-
-        {
-            text: "NOT A OR NOT B",
-            correct: false,
-            rationale: "Essa equivalência corresponde à negação de A.B."
-        },
-
-        {
-            text: "A AND B",
-            correct: false,
-            rationale: "A expressão ignora as negações."
-        },
-
-        {
-            text: "NOT(A AND B)",
-            correct: false,
-            rationale: "Negar soma e negar produto são operações diferentes."
-        }
-
-    ]
-},
-
-{
-    id: 4,
-    difficulty: "easy",
-
-    q: "A porta XOR produz saída 1 quando:",
-
-    options: [
-
-        {
-            text: "As entradas são diferentes.",
-            correct: true,
-            rationale: "XOR retorna verdadeiro apenas quando as entradas são diferentes."
-        },
-
-        {
-            text: "As entradas são iguais.",
-            correct: false,
-            rationale: "Quando as entradas são iguais, a saída é 0."
-        },
-
-        {
-            text: "As duas entradas são 1.",
-            correct: false,
-            rationale: "1 XOR 1 resulta em 0."
-        },
-
-        {
-            text: "As duas entradas são 0.",
-            correct: false,
-            rationale: "0 XOR 0 também resulta em 0."
-        }
-
-    ]
-},
-
-{
-    id: 5,
-    difficulty: "medium",
-
-    q: "Qual é a função principal do sinal de clock em circuitos síncronos?",
-
-    options: [
-
-        {
-            text: "Sincronizar as mudanças de estado.",
-            correct: true,
-            rationale: "O clock coordena quando as alterações devem ocorrer."
-        },
-
-        {
-            text: "Aumentar a tensão do circuito.",
-            correct: false,
-            rationale: "Clock não altera tensão elétrica."
-        },
-
-        {
-            text: "Substituir portas lógicas.",
-            correct: false,
-            rationale: "Portas continuam sendo necessárias."
-        },
-
-        {
-            text: "Inverter sinais digitais.",
-            correct: false,
-            rationale: "A inversão é feita pela porta NOT."
-        }
-
-    ]
-},
-
-{
-    id: 6,
-    difficulty: "hard",
-
-    q: "Qual propriedade booleana é representada pela expressão A . (B + C) = A.B + A.C?",
-
-    options: [
-
-        {
-            text: "Distributiva",
-            correct: true,
-            rationale: "A operação AND está sendo distribuída sobre a operação OR."
-        },
-
-        {
-            text: "Comutativa",
-            correct: false,
-            rationale: "A propriedade comutativa apenas altera a ordem dos termos."
-        },
-
-        {
-            text: "Associativa",
-            correct: false,
-            rationale: "A associativa altera agrupamentos, não distribui operações."
-        },
-
-        {
-            text: "Absorção",
-            correct: false,
-            rationale: "A absorção elimina redundâncias lógicas."
-        }
-
-    ]
-},
-
-{
-    id: 7,
-    difficulty: "medium",
-
-    q: "A propriedade A . 1 = A representa:",
-
-    options: [
-
-        {
-            text: "Elemento neutro da operação AND",
-            correct: true,
-            rationale: "O valor 1 não altera o resultado da operação AND."
-        },
-
-        {
-            text: "Contradição",
-            correct: false,
-            rationale: "Contradição ocorre quando o resultado é sempre 0."
-        },
-
-        {
-            text: "Tautologia",
-            correct: false,
-            rationale: "Tautologia representa resultado sempre verdadeiro."
-        },
-
-        {
-            text: "Involução",
-            correct: false,
-            rationale: "Involução trata da dupla negação."
-        }
-
-    ]
-},
-
-{
-    id: 8,
-    difficulty: "hard",
-
-    q: "Qual alternativa representa corretamente uma implementação de XOR usando apenas OR, AND e NOT?",
-
-    options: [
-
-        {
-            text: "(A OR B) AND NOT(A AND B)",
-            correct: true,
-            rationale: "Essa é a forma clássica de construir XOR usando operações básicas."
-        },
-
-        {
-            text: "(A AND B) OR NOT(A)",
-            correct: false,
-            rationale: "A expressão não representa comportamento XOR."
-        },
-
-        {
-            text: "NOT(A OR B)",
-            correct: false,
-            rationale: "Essa expressão representa uma porta NOR."
-        },
-
-        {
-            text: "(A OR B) OR (A AND B)",
-            correct: false,
-            rationale: "A expressão simplifica para OR."
-        }
-
-    ]
-},
-
-{
-    id: 9,
-    difficulty: "hard",
-
-    q: "Nos circuitos sequenciais assíncronos, a mudança de estado ocorre:",
-
-    options: [
-
-        {
-            text: "Sem depender de pulsos de clock.",
-            correct: true,
-            rationale: "Circuitos assíncronos mudam de estado imediatamente após mudanças nas entradas."
-        },
-
-        {
-            text: "Apenas durante a borda de subida do clock.",
-            correct: false,
-            rationale: "Isso caracteriza circuitos síncronos."
-        },
-
-        {
-            text: "Somente quando todas as entradas forem iguais.",
-            correct: false,
-            rationale: "A igualdade das entradas não define circuitos assíncronos."
-        },
-
-        {
-            text: "Exclusivamente após um reset.",
-            correct: false,
-            rationale: "Reset não é requisito para mudança de estado."
-        }
-
-    ]
-},
-
-{
-    id: 10,
-    difficulty: "medium",
-
-    q: "Qual das alternativas descreve corretamente uma saída pulsada?",
-
-    options: [
-
-        {
-            text: "A saída permanece ativa apenas durante um pulso específico.",
-            correct: true,
-            rationale: "Saídas pulsadas possuem duração limitada ao pulso de entrada ou clock."
-        },
-
-        {
-            text: "A saída permanece indefinidamente ativa.",
-            correct: false,
-            rationale: "Isso caracteriza saída de nível."
-        },
-
-        {
-            text: "A saída ignora sinais de clock.",
-            correct: false,
-            rationale: "Saídas pulsadas podem depender diretamente do clock."
-        },
-
-        {
-            text: "A saída ocorre apenas em portas XOR.",
-            correct: false,
-            rationale: "Saídas pulsadas não são exclusivas de XOR."
-        }
-
-    ]
-},
-
-{
-    id: 11,
-    difficulty: "hard",
-
-    q: "Qual expressão representa corretamente a equivalência de NOT(A . B) segundo De Morgan?",
-
-    options: [
-
-        {
-            text: "NOT A + NOT B",
-            correct: true,
-            rationale: "A negação do produto equivale à soma das negações."
-        },
-
-        {
-            text: "NOT A . NOT B",
-            correct: false,
-            rationale: "Essa expressão corresponde à negação da soma."
-        },
-
-        {
-            text: "A + B",
-            correct: false,
-            rationale: "As negações foram removidas incorretamente."
-        },
-
-        {
-            text: "A . B",
-            correct: false,
-            rationale: "A expressão original continua negada."
-        }
-
-    ]
-},
-
-{
-    id: 12,
-    difficulty: "easy",
-
-    q: "Qual símbolo é utilizado para representar a operação lógica OR na álgebra booleana?",
-
-    options: [
-
-        {
-            text: "+",
-            correct: true,
-            rationale: "A operação OR é representada pelo símbolo de soma (+)."
-        },
-
-        {
-            text: ".",
-            correct: false,
-            rationale: "O ponto representa AND."
-        },
-
-        {
-            text: "/",
-            correct: false,
-            rationale: "Barra não representa OR."
-        },
-
-        {
-            text: "*",
-            correct: false,
-            rationale: "A multiplicação não é a representação formal utilizada."
-        }
-
-    ]
-},
-
-{
-    id: 13,
-    difficulty: "medium",
-
-    q: "Uma porta NAND pode ser considerada universal porque:",
-
-    options: [
-
-        {
-            text: "É possível construir qualquer outra porta lógica usando apenas NAND.",
-            correct: true,
-            rationale: "NAND é considerada universal devido à sua capacidade de implementar qualquer função lógica."
-        },
-
-        {
-            text: "Ela substitui completamente circuitos sequenciais.",
-            correct: false,
-            rationale: "NAND não substitui circuitos completos."
-        },
-
-        {
-            text: "Só funciona em sistemas síncronos.",
-            correct: false,
-            rationale: "NAND funciona em diversos contextos digitais."
-        },
-
-        {
-            text: "Produz apenas saídas iguais a 1.",
-            correct: false,
-            rationale: "A saída depende das entradas."
-        }
-
-    ]
-},
-
-{
-    id: 14,
-    difficulty: "hard",
-
-    q: "A expressão A + A = A representa qual propriedade da álgebra booleana?",
-
-    options: [
-
-        {
-            text: "Idempotência",
-            correct: true,
-            rationale: "A repetição da variável não altera o resultado lógico."
-        },
-
-        {
-            text: "Distributiva",
-            correct: false,
-            rationale: "A distributiva distribui operações."
-        },
-
-        {
-            text: "Associativa",
-            correct: false,
-            rationale: "Associativa reorganiza agrupamentos."
-        },
-
-        {
-            text: "Comutativa",
-            correct: false,
-            rationale: "Comutativa altera apenas a ordem."
-        }
-
-    ]
-},
-
-{
-    id: 15,
-    difficulty: "hard",
-
-    q: "Qual alternativa descreve corretamente um circuito combinacional?",
-
-    options: [
-
-        {
-            text: "Sua saída depende exclusivamente das entradas atuais.",
-            correct: true,
-            rationale: "Circuitos combinacionais não armazenam estados anteriores."
-        },
-
-        {
-            text: "Sua saída depende de memória interna.",
-            correct: false,
-            rationale: "Isso caracteriza circuitos sequenciais."
-        },
-
-        {
-            text: "Necessita obrigatoriamente de clock.",
-            correct: false,
-            rationale: "Clock é comum em circuitos sequenciais síncronos."
-        },
-
-        {
-            text: "Só pode ser implementado com NAND.",
-            correct: false,
-            rationale: "Diversas portas podem ser utilizadas."
-        }
-
-    ]
-},
-
-
-{
-    id: 16,
-    difficulty: "hard",
-    q: "Qual é a expressão simplificada resultante da aplicação da propriedade de absorção em A + (A . B)?",
-    options: [
-        { text: "A", correct: true, rationale: "Pela lei da absorção, A + AB = A, pois se A for 1, a soma é 1; se A for 0, a soma é 0." },
-        { text: "B", correct: false, rationale: "B é absorvido pela redundância de A." },
-        { text: "A + B", correct: false, rationale: "Isso ignora a simplificação booleana." },
-        { text: "1", correct: false, rationale: "O resultado depende do valor de A." }
-    ]
-},
-{
-    id: 17,
-    difficulty: "hard",
-    q: "A expressão lógica (A . B) + (A . B') simplifica-se para:",
-    options: [
-        { text: "A", correct: true, rationale: "Pela distributiva: A.(B + B'). Como B + B' = 1, resta A.1 = A." },
-        { text: "B", correct: false, rationale: "A variável B é eliminada no processo de simplificação." },
-        { text: "A . B", correct: false, rationale: "A negação de B permite a eliminação do termo B." },
-        { text: "0", correct: false, rationale: "O resultado é A, não uma contradição." }
-    ]
-},
-{
-    id: 18,
-    difficulty: "hard",
-    q: "De acordo com as propriedades da Disjunção, a expressão A + (~A . B) é equivalente a:",
-    options: [
-        { text: "A + B", correct: true, rationale: "Esta é uma variação da absorção: a variável A domina e elimina sua própria negação no produto." },
-        { text: "A", correct: false, rationale: "O termo B permanece na expressão final." },
-        { text: "B", correct: false, rationale: "A variável A não é eliminada." },
-        { text: "1", correct: false, rationale: "Não há elementos suficientes para garantir uma tautologia." }
-    ]
-},
-{
-    id: 19,
-    difficulty: "medium",
-    q: "Qual porta lógica produz uma saída 0 APENAS quando todas as suas entradas são 1?",
-    options: [
-        { text: "NAND", correct: true, rationale: "A NAND é o inverso da AND; se todas forem 1 (AND=1), o resultado é 0." },
-        { text: "NOR", correct: false, rationale: "A NOR produz 0 se QUALQUER entrada for 1." },
-        { text: "AND", correct: false, rationale: "A AND produziria 1 nessa condição." },
-        { text: "XOR", correct: false, rationale: "XOR produz 0 se as entradas forem iguais (1 e 1 ou 0 e 0)." }
-    ]
-},
-{
-    id: 20,
-    difficulty: "hard",
-    q: "Sobre circuitos sequenciais, o que define um 'latch' em comparação a um 'flip-flop'?",
-    options: [
-        { text: "O latch é sensível ao nível do sinal, enquanto o flip-flop é sensível à borda.", correct: true, rationale: "Latches mudam com o estado do nível lógico; flip-flops sincronizam na transição (borda) do clock." },
-        { text: "O latch possui memória e o flip-flop não.", correct: false, rationale: "Ambos são dispositivos de memória." },
-        { text: "O flip-flop é assíncrono e o latch é síncrono.", correct: false, rationale: "A distinção principal é o método de disparo (nível vs borda)." },
-        { text: "Latches só podem ser feitos com portas NOR.", correct: false, rationale: "Podem ser feitos com NAND ou NOR." }
-    ]
-},
-{
-    id: 21,
-    difficulty: "hard",
-    q: "A propriedade da Involução afirma que ~(~A) é igual a:",
-    options: [
-        { text: "A", correct: true, rationale: "A dupla negação de uma variável retorna ao seu valor original." },
-        { text: "0", correct: false, rationale: "A negação dupla não anula a lógica para zero." },
-        { text: "1", correct: false, rationale: "A negação dupla não gera uma tautologia fixa." },
-        { text: "~A", correct: false, rationale: "Uma das negações foi esquecida." }
-    ]
-},
-{
-    id: 22,
-    difficulty: "medium",
-    q: "Qual é o valor da saída de uma porta NOR se as entradas forem A=0 e B=0?",
-    options: [
-        { text: "1", correct: true, rationale: "NOR é o inverso de OR. Se 0+0=0, então o inverso é 1." },
-        { text: "0", correct: false, rationale: "0 seria a saída de uma porta OR convencional." },
-        { text: "Indeterminado", correct: false, rationale: "Lógica digital binária é sempre determinada." },
-        { text: "-1", correct: false, rationale: "Não existem valores negativos na lógica booleana básica." }
-    ]
-},
-{
-    id: 23,
-    difficulty: "hard",
-    q: "Qual teorema de De Morgan descreve a porta NOR?",
-    options: [
-        { text: "~(A + B) = ~A . ~B", correct: true, rationale: "A negação da soma (NOR) equivale ao produto das negações individuais." },
-        { text: "~(A . B) = ~A + ~B", correct: false, rationale: "Este teorema descreve a porta NAND." },
-        { text: "A + B = B + A", correct: false, rationale: "Esta é a propriedade comutativa." },
-        { text: "A . 0 = 0", correct: false, rationale: "Esta é a propriedade do elemento nulo." }
-    ]
-},
-{
-    id: 24,
-    difficulty: "hard",
-    q: "Em um circuito comutador 2:4, se as entradas de controle forem A=1 e B=1, qual saída será ativada?",
-    options: [
-        { text: "A quarta saída (S3)", correct: true, rationale: "Em binário, 11 corresponde ao número 3 (contando de S0 a S3)." },
-        { text: "A primeira saída (S0)", correct: false, rationale: "S0 é ativada quando as entradas são 00." },
-        { text: "Nenhuma saída", correct: false, rationale: "Um comutador sempre ativa uma saída correspondente à entrada." },
-        { text: "Todas as saídas", correct: false, rationale: "Apenas uma saída é selecionada por vez." }
-    ]
-},
-{
-    id: 25,
-    difficulty: "hard",
-    q: "Simplificando a expressão (A + B) . (A + ~B), obtemos:",
-    options: [
-        { text: "A", correct: true, rationale: "Pela distributiva inversa: A + (B . ~B). Como B . ~B = 0, resta A + 0 = A." },
-        { text: "B", correct: false, rationale: "B é eliminado pela contradição com sua negação." },
-        { text: "A + B", correct: false, rationale: "A expressão permite uma simplificação maior." },
-        { text: "1", correct: false, rationale: "Não resulta em tautologia fixa." }
-    ]
-},
-{
-    id: 26,
-    difficulty: "medium",
-    q: "A propriedade da Identidade na Disjunção afirma que A + 0 é igual a:",
-    options: [
-        { text: "A", correct: true, rationale: "Zero é o elemento neutro da operação OR." },
-        { text: "0", correct: false, rationale: "Zero seria o resultado se fosse uma porta AND (A . 0)." },
-        { text: "1", correct: false, rationale: "A saída depende do valor de A." },
-        { text: "~A", correct: false, rationale: "Somar zero não inverte o sinal." }
-    ]
-},
-{
-    id: 27,
-    difficulty: "hard",
-    q: "Qual o resultado de uma operação XOR entre três entradas onde todas são 1 (1 XOR 1 XOR 1)?",
-    options: [
-        { text: "1", correct: true, rationale: "1 XOR 1 = 0. Então, 0 XOR 1 = 1. O XOR de um número ímpar de '1s' é sempre 1." },
-        { text: "0", correct: false, rationale: "O resultado seria 0 se houvesse um número par de entradas em nível alto." },
-        { text: "Indeterminado", correct: false, rationale: "O XOR é uma operação associativa e determinada." },
-        { text: "3", correct: false, rationale: "Lógica booleana só admite 0 ou 1." }
-    ]
-},
-{
-    id: 28,
-    difficulty: "hard",
-    q: "A propriedade Tautologia na Disjunção (A + ~A) resulta sempre em:",
-    options: [
-        { text: "1", correct: true, rationale: "Como uma das variáveis será obrigatoriamente 1, o resultado da soma lógica é sempre verdadeiro." },
-        { text: "0", correct: false, rationale: "Isso ocorreria na contradição (A . ~A)." },
-        { text: "A", correct: false, rationale: "O resultado é independente de A, sendo sempre 1." },
-        { text: "~A", correct: false, rationale: "A expressão simplifica para o valor constante 1." }
-    ]
-},
-{
-    id: 29,
-    difficulty: "hard",
-    q: "O que acontece com a saída de um circuito combinacional se as entradas mudarem de 01 para 10?",
-    options: [
-        { text: "A saída muda instantaneamente de acordo com a nova combinação, ignorando o estado anterior.", correct: true, rationale: "Circuitos combinacionais não têm memória; a saída é função direta e exclusiva das entradas atuais." },
-        { text: "A saída mantém o estado anterior até o próximo pulso de clock.", correct: false, rationale: "Isso ocorreria em um circuito sequencial síncrono." },
-        { text: "O circuito entra em estado de alta impedância.", correct: false, rationale: "Mudança de entrada não causa alta impedância por padrão." },
-        { text: "A saída será sempre 0 durante a transição.", correct: false, rationale: "A saída depende da lógica implementada entre os estados." }
-    ]
-},
-{
-    id: 30,
-    difficulty: "hard",
-    q: "Um meio-somador (half-adder) é composto por quais portas lógicas básicas para gerar a Soma (S) e o Vai-um (Cout)?",
-    options: [
-        { text: "XOR para a Soma e AND para o Vai-um.", correct: true, rationale: "XOR detecta a diferença (soma binária) e AND detecta quando ambos são 1 (gerando o carry)." },
-        { text: "OR para a Soma e NAND para o Vai-um.", correct: false, rationale: "OR falha em 1+1 (daria 1, mas a soma de 1+1 é 0 com carry)." },
-        { text: "AND para a Soma e XOR para o Vai-um.", correct: false, rationale: "As funções estão invertidas." },
-        { text: "Apenas portas NOR.", correct: false, rationale: "Embora possível com portas universais, a forma básica usa XOR e AND." }
-    ]
-}
-
+    // --- 01 a 06 já fornecidas anteriormente (Mantidas para completar as 30) ---
+    { id: 1, difficulty: "easy", q: "Como é definido o conjunto dos números naturais (N)?", options: [{ text: "Pelos números {0, 1, 2, 3, ...}", correct: true, rationale: "O conjunto N é formado por todos os números inteiros não negativos." }, { text: "Pelos números {..., -2, -1, 0, 1, 2, ...}", correct: false, rationale: "Este é o conjunto dos números inteiros (Z)." }, { text: "Apenas por números ímpares positivos.", correct: false, rationale: "N inclui pares e ímpares." }, { text: "Por números que podem ser escritos como fração.", correct: false, rationale: "Esta é a definição de números racionais." }] },
+    { id: 2, difficulty: "medium", q: "Qual propriedade garante que a ordem das parcelas não altera a soma (a + b = b + a)?", options: [{ text: "Comutativa da adição", correct: true, rationale: "A propriedade comutativa permite trocar a ordem dos termos." }, { text: "Elemento neutro", correct: false, rationale: "O elemento neutro diz que a + 0 = a." }, { text: "Associativa", correct: false, rationale: "Refere-se ao agrupamento." }, { text: "Distributiva", correct: false, rationale: "Relaciona multiplicação com adição." }] },
+    { id: 3, difficulty: "medium", q: "Qual é o resultado da propriedade 'Produto de potências de mesma base' (a^m * a^n)?", options: [{ text: "a^(m + n)", correct: true, rationale: "Na multiplicação de bases iguais, somam-se os expoentes." }, { text: "a^(m - n)", correct: false, rationale: "Isso ocorre na divisão." }, { text: "a^(m * n)", correct: false, rationale: "Isso ocorre na potência de potência." }, { text: "(a * b)^m", correct: false, rationale: "Potência de um produto." }] },
+    { id: 4, difficulty: "hard", q: "Qual o resultado de (-1)² e -1², respectivamente?", options: [{ text: "1 e -1", correct: true, rationale: "O parêntese inclui o sinal na base; sem ele, o sinal apenas se repete." }, { text: "1 e 1", correct: false, rationale: "-1² é -(1*1)." }, { text: "-1 e -1", correct: false, rationale: "Base negativa com expoente par fica positiva." }, { text: "-1 e 1", correct: false, rationale: "Invertido." }] },
+    { id: 5, difficulty: "medium", q: "Um automóvel percorre 480 km em 2 horas. Quantos km percorrerá em 6 horas?", options: [{ text: "1440 km", correct: true, rationale: "Regra de três direta: 480 * 3 = 1440." }, { text: "960 km", correct: false, rationale: "Cálculo incorreto." }, { text: "240 km", correct: false, rationale: "Cálculo incorreto." }, { text: "1200 km", correct: false, rationale: "Cálculo incorreto." }] },
+    { id: 6, difficulty: "hard", q: "Qual a diferença entre a Regra de Três Simples e a Composta?", options: [{ text: "A simples envolve duas grandezas, enquanto a composta envolve três ou mais.", correct: true, rationale: "Definição baseada no número de grandezas." }, { text: "A simples é direta e a composta é inversa.", correct: false, rationale: "Ambas podem ser os dois." }, { text: "A simples usa inteiros.", correct: false, rationale: "Incorreto." }, { text: "Não há diferença.", correct: false, rationale: "Incorreto." }] },
+
+    // --- NOVAS QUESTÕES (7 a 30) ---
+    // PRIORIDADE: POTENCIAÇÃO
+    {
+        id: 7,
+        difficulty: "easy",
+        q: "Qual o valor de qualquer número 'a' (diferente de zero) elevado ao expoente 0?",
+        options: [
+            { text: "1", correct: true, rationale: "Por definição, a^0 = 1 para qualquer a ≠ 0." },
+            { text: "0", correct: false, rationale: "Qualquer número multiplicado por zero é zero, mas na potência o resultado é 1." },
+            { text: "a", correct: false, rationale: "Isso seria a^1." },
+            { text: "Indeterminado", correct: false, rationale: "Apenas 0^0 é usualmente tratado como indeterminação." }
+        ]
+    },
+    {
+        id: 8,
+        difficulty: "medium",
+        q: "Como simplificar a expressão (2³)⁴?",
+        options: [
+            { text: "2¹²", correct: true, rationale: "Potência de potência: multiplicam-se os expoentes (3 * 4 = 12)." },
+            { text: "2⁷", correct: false, rationale: "Aqui você somou os expoentes, o que só ocorre no produto de bases iguais." },
+            { text: "2¹", correct: false, rationale: "Incorreto." },
+            { text: "8⁴", correct: false, rationale: "Embora matematicamente igual, a simplificação de potência pede a base 2." }
+        ]
+    },
+    {
+        id: 9,
+        difficulty: "hard",
+        q: "Qual é a forma de potência da raiz: ∛x²?",
+        options: [
+            { text: "x^(2/3)", correct: true, rationale: "Regra: o expoente vira numerador e o índice da raiz vira denominador ('quem tá no sol vai pra sombra')." },
+            { text: "x^(3/2)", correct: false, rationale: "Inverteu a posição do índice e do expoente." },
+            { text: "x⁶", correct: false, rationale: "Multiplicou em vez de transformar em fração." },
+            { text: "x^-6", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 10,
+        difficulty: "medium",
+        q: "Quanto é 5⁻²?",
+        options: [
+            { text: "1/25", correct: true, rationale: "Expoente negativo inverte a base: 1/5² = 1/25." },
+            { text: "-25", correct: false, rationale: "O expoente negativo não torna o número negativo, ele inverte a base." },
+            { text: "25", correct: false, rationale: "Esqueceu de inverter a base." },
+            { text: "1/10", correct: false, rationale: "Confundiu potência com multiplicação por 2." }
+        ]
+    },
+    {
+        id: 11,
+        difficulty: "easy",
+        q: "Qual o resultado de (-2)³?",
+        options: [
+            { text: "-8", correct: true, rationale: "Base negativa com expoente ímpar mantém o sinal negativo." },
+            { text: "8", correct: false, rationale: "O sinal só ficaria positivo se o expoente fosse par." },
+            { text: "-6", correct: false, rationale: "Multiplicou a base pelo expoente (erro comum)." },
+            { text: "6", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 12,
+        difficulty: "hard",
+        q: "Simplifique: (a² * b³)². ",
+        options: [
+            { text: "a⁴ * b⁶", correct: true, rationale: "Potência de um produto: eleva-se cada fator ao expoente externo." },
+            { text: "a⁴ * b⁵", correct: false, rationale: "Esqueceu de multiplicar o expoente do b." },
+            { text: "a² * b⁶", correct: false, rationale: "Esqueceu de elevar o a." },
+            { text: "(ab)⁷", correct: false, rationale: "Somou expoentes de bases diferentes." }
+        ]
+    },
+    {
+        id: 13,
+        difficulty: "medium",
+        q: "O que caracteriza um número irracional?",
+        options: [
+            { text: "Decimal infinita e não periódica.", correct: true, rationale: "Números como π ou √2 não podem ser escritos como fração exata." },
+            { text: "Qualquer número negativo.", correct: false, rationale: "Negativos podem ser inteiros ou racionais." },
+            { text: "Dízimas periódicas.", correct: false, rationale: "Dízimas periódicas são racionais, pois têm geratriz." },
+            { text: "Números primos.", correct: false, rationale: "Primos são naturais." }
+        ]
+    },
+    {
+        id: 14,
+        difficulty: "medium",
+        q: "Na regra de três composta, se aumentarmos o número de operários, o tempo para terminar a obra diminui. Essas grandezas são:",
+        options: [
+            { text: "Inversamente proporcionais", correct: true, rationale: "Quando uma grandeza aumenta e a outra diminui na mesma razão, a relação é inversa." },
+            { text: "Diretamente proporcionais", correct: false, rationale: "Na direta, ambas aumentariam juntas." },
+            { text: "Equivalentes", correct: false, rationale: "Termo incorreto para o contexto." },
+            { text: "Nulas", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 15,
+        difficulty: "easy",
+        q: "Qual o valor de √144?",
+        options: [
+            { text: "12", correct: true, rationale: "Pois 12 * 12 = 144." },
+            { text: "14", correct: false, rationale: "14 * 14 = 196." },
+            { text: "11", correct: false, rationale: "11 * 11 = 121." },
+            { text: "72", correct: false, rationale: "Dividiu por 2 em vez de tirar a raiz." }
+        ]
+    },
+    {
+        id: 16,
+        difficulty: "hard",
+        q: "Resolva: 2⁵ / 2³.",
+        options: [
+            { text: "4", correct: true, rationale: "2^(5-3) = 2² = 4." },
+            { text: "2", correct: false, rationale: "Subtraiu os expoentes mas esqueceu de elevar a base ao resultado." },
+            { text: "8", correct: false, rationale: "Incorreto." },
+            { text: "2⁸", correct: false, rationale: "Somou os expoentes em uma divisão." }
+        ]
+    },
+    {
+        id: 17,
+        difficulty: "medium",
+        q: "O conjunto dos números Reais (R) é formado pela união de quais conjuntos?",
+        options: [
+            { text: "Racionais e Irracionais", correct: true, rationale: "R = Q ∪ I." },
+            { text: "Naturais e Inteiros apenas", correct: false, rationale: "Faltam os outros subconjuntos." },
+            { text: "Apenas números positivos", correct: false, rationale: "Reais incluem negativos e zero." },
+            { text: "Inteiros e Irracionais apenas", correct: false, rationale: "Faltam os Racionais não inteiros." }
+        ]
+    },
+    {
+        id: 18,
+        difficulty: "easy",
+        q: "O que é uma dízima periódica?",
+        options: [
+            { text: "Um número decimal infinito com repetição de algarismos.", correct: true, rationale: "Ex: 0,333... é racional." },
+            { text: "Um número que não tem fim e não repete.", correct: false, rationale: "Isso é um irracional." },
+            { text: "Um número inteiro.", correct: false, rationale: "Incorreto." },
+            { text: "Um número primo.", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 19,
+        difficulty: "hard",
+        q: "Se 5 máquinas produzem 500 peças em 2 dias, quantas peças 10 máquinas produzirão em 4 dias?",
+        options: [
+            { text: "2000 peças", correct: true, rationale: "Dobre as máquinas (1000 peças) e depois dobre o tempo (2000 peças)." },
+            { text: "1000 peças", correct: false, rationale: "Só considerou o aumento das máquinas." },
+            { text: "1500 peças", correct: false, rationale: "Cálculo incorreto." },
+            { text: "5000 peças", correct: false, rationale: "Cálculo incorreto." }
+        ]
+    },
+    {
+        id: 20,
+        difficulty: "medium",
+        q: "Qual o valor de (1/2)⁻³?",
+        options: [
+            { text: "8", correct: true, rationale: "Inverte a base (2/1) e eleva ao cubo: 2³ = 8." },
+            { text: "1/8", correct: false, rationale: "Esqueceu de inverter a base." },
+            { text: "-8", correct: false, rationale: "O expoente negativo não muda o sinal do resultado para menos." },
+            { text: "6", correct: false, rationale: "Multiplicou 2 por 3." }
+        ]
+    },
+    {
+        id: 21,
+        difficulty: "easy",
+        q: "No intervalo aberto (2, 5), o número 2 faz parte do conjunto?",
+        options: [
+            { text: "Não", correct: true, rationale: "Intervalos abertos excluem os números das extremidades." },
+            { text: "Sim", correct: false, rationale: "Só faria parte se fosse intervalo fechado [2, 5]." },
+            { text: "Depende do contexto", correct: false, rationale: "Em intervalos matemáticos, a regra é fixa." },
+            { text: "Apenas se for inteiro", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 22,
+        difficulty: "hard",
+        q: "Qual o resultado de √(x⁸)?",
+        options: [
+            { text: "x⁴", correct: true, rationale: "Divide-se o expoente pelo índice da raiz (8/2 = 4)." },
+            { text: "x²", correct: false, rationale: "Cálculo incorreto." },
+            { text: "x⁶", correct: false, rationale: "Subtraiu em vez de dividir." },
+            { text: "x¹⁶", correct: false, rationale: "Multiplicou em vez de dividir." }
+        ]
+    },
+    {
+        id: 23,
+        difficulty: "medium",
+        q: "A propriedade distributiva diz que a(b + c) é igual a:",
+        options: [
+            { text: "ab + ac", correct: true, rationale: "O termo de fora multiplica cada termo de dentro." },
+            { text: "abc", correct: false, rationale: "Isso seria se fosse tudo multiplicação." },
+            { text: "a + b + c", correct: false, rationale: "Incorreto." },
+            { text: "ab + c", correct: false, rationale: "Esqueceu de multiplicar o 'a' pelo 'c'." }
+        ]
+    },
+    {
+        id: 24,
+        difficulty: "easy",
+        q: "O número √3 é um exemplo de qual conjunto?",
+        options: [
+            { text: "Irracionais", correct: true, rationale: "Raízes não exatas de números primos são irracionais." },
+            { text: "Naturais", correct: false, rationale: "Naturais são inteiros positivos." },
+            { text: "Racionais", correct: false, rationale: "Não pode ser escrito como fração de inteiros." },
+            { text: "Dízima Periódica", correct: false, rationale: "Não possui repetição padrão." }
+        ]
+    },
+    {
+        id: 25,
+        difficulty: "hard",
+        q: "Simplifique a expressão: (2² * 2³) / 2⁴.",
+        options: [
+            { text: "2", correct: true, rationale: "Em cima: 2^(2+3)=2⁵. Depois: 2⁵/2⁴ = 2^(5-4) = 2¹ = 2." },
+            { text: "4", correct: false, rationale: "Cálculo incorreto." },
+            { text: "2⁹", correct: false, rationale: "Somou todos os expoentes ignorando a divisão." },
+            { text: "1", correct: false, rationale: "Cálculo incorreto." }
+        ]
+    },
+    {
+        id: 26,
+        difficulty: "medium",
+        q: "Se uma grandeza A dobra e a grandeza B cai pela metade, elas são:",
+        options: [
+            { text: "Inversamente proporcionais", correct: true, rationale: "É a definição de proporção inversa." },
+            { text: "Diretamente proporcionais", correct: false, rationale: "Na direta, B dobraria também." },
+            { text: "Iguais", correct: false, rationale: "Incorreto." },
+            { text: "Constantes", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 27,
+        difficulty: "easy",
+        q: "Qual o elemento neutro da multiplicação?",
+        options: [
+            { text: "1", correct: true, rationale: "Qualquer número multiplicado por 1 é ele mesmo." },
+            { text: "0", correct: false, rationale: "0 é o elemento neutro da adição." },
+            { text: "-1", correct: false, rationale: "Muda o sinal do número." },
+            { text: "10", correct: false, rationale: "Incorreto." }
+        ]
+    },
+    {
+        id: 28,
+        difficulty: "hard",
+        q: "O que acontece com o resultado de uma potência quando a base é negativa e o expoente é par?",
+        options: [
+            { text: "Fica sempre positivo", correct: true, rationale: "A multiplicação de pares de sinais negativos resulta em positivo." },
+            { text: "Fica sempre negativo", correct: false, rationale: "Isso ocorre se o expoente for ímpar." },
+            { text: "O resultado é zero", correct: false, rationale: "Incorreto." },
+            { text: "O sinal não muda", correct: false, rationale: "O sinal muda de negativo para positivo." }
+        ]
+    },
+    {
+        id: 29,
+        difficulty: "medium",
+        q: "Como se representa o conjunto dos Reais sem o zero?",
+        options: [
+            { text: "R*", correct: true, rationale: "O asterisco (*) é a notação para excluir o zero de um conjunto." },
+            { text: "R+", correct: false, rationale: "Representa apenas os reais não negativos." },
+            { text: "R-", correct: false, rationale: "Representa apenas os reais não positivos." },
+            { text: "R0", correct: false, rationale: "Notação inexistente para exclusão." }
+        ]
+    },
+    {
+        id: 30,
+        difficulty: "hard",
+        q: "Na radiciação, qual o nome do número que fica 'dentro' da raiz?",
+        options: [
+            { text: "Radicando", correct: true, rationale: "O número dentro é o radicando, o pequeno lá fora é o índice." },
+            { text: "Potência", correct: false, rationale: "Resultado da potenciação." },
+            { text: "Exponente", correct: false, rationale: "Parte da potenciação." },
+            { text: "Índice", correct: false, rationale: "O índice é o número que indica o tipo de raiz (ex: 2 para quadrada)." }
+        ]
+    }
 ];
